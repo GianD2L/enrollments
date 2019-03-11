@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+		<title>course-name</title>
+		<meta name="description" content="Display course name">
+
+		<!-- See https://goo.gl/OOhYW5 -->
+		<link rel="manifest" href="/manifest.json">
+
+		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+		<script type="module" src="/src/course-name.js" crossorigin></script>
+		<script type="module" src="/src/course-pin.js" crossorigin></script>
+		<script type="module" src="/src/course-card.js" crossorigin></script>
+		<script type="module" src="/src/courses-list.js" crossorigin></script>
+	</head>
+	<body>
+		<courses-list href="data/enrollments" token="1234a"></courses-list>
+	</body>
+</html>

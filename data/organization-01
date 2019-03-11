@@ -1,0 +1,21 @@
+{
+	"properties": {
+		"name": "Course 01",
+		"code": "C01",
+		"isActive": true
+	},
+	"links": [
+		{
+			"rel": [
+				"self"
+			],
+			"href": "data/organization-01"
+		},
+		{
+			"rel": [
+				"https://api.brightspace.com/rels/previous-course"
+			],
+			"href": "data/organization-00"
+		}
+	]
+}

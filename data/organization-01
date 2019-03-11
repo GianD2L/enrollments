@@ -17,5 +17,40 @@
 			],
 			"href": "data/organization-00"
 		}
-	]
+	],
+    "entities": [
+        {
+            "class": [
+                "color"
+            ],
+            "rel": [
+                "https://api.brightspace.com/rels/color"
+            ],
+            "properties": {
+                "hexString": "#FF389B",
+                "description": ""
+            }
+        },
+        {
+            "class": [
+                "course-image"
+            ],
+            "rel": [
+                "https://api.brightspace.com/rels/organization-image"
+            ],
+            "href": "https://s.brightspace.com/course-images/images/db698103-20ec-42cd-b2d9-a6595b32002a/tile-low-density-max-size.jpg"
+        },
+        {
+            "class": [
+                "relative-uri"
+            ],
+            "rel": [
+                "item",
+                "https://api.brightspace.com/rels/organization-homepage"
+            ],
+            "properties": {
+                "path": "/d2l/home/6609"
+            }
+        }
+    ]
 }

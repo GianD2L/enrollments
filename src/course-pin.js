@@ -17,6 +17,12 @@ class CoursePin extends mixinBehaviors([
 				:host {
 					display: inline-block;
 				}
+
+				d2l-icon {
+					color: white;
+					width: 18px;
+					height: 18px;
+				}
 			</style>
 			<d2l-button-icon
 				translucent=""

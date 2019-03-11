@@ -40,21 +40,10 @@ class CourseCard extends mixinBehaviors([
 					width: 280px;
 					margin: 10px;
 				}
-
-				d2l-card img {
-					display: block;
-					width: 100%;
-				}
-
-				d2l-icon {
-					color: white;
-					width: 18px;
-					height: 18px;
-				}
 			</style>
 
 			<d2l-card text="Course Card">
-				<img slot="header" src="https://s.brightspace.com/course-images/images/63b162ab-b582-4bf9-8c1d-1dad04714121/tile-low-density-max-size.jpg">
+				<course-image slot="header" href="[[href]]" token="[[token]]"></course-image>
 				
 				<d2l-dropdown-more slot="actions" translucent="" visible-on-ancestor="" text="Open!">
 						<d2l-dropdown-content>

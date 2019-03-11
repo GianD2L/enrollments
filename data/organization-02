@@ -1,9 +1,50 @@
 {
-	"properties": {
+    "class": [
+        "active",
+        "course-offering"
+    ],
+    "properties": {
 		"name": "Course 02",
 		"code": "C02",
-		"isActive": true
-	},
+        "startDate": null,
+        "endDate": null,
+        "isActive": true
+    },
+    "entities": [
+        {
+            "class": [
+                "color"
+            ],
+            "rel": [
+                "https://api.brightspace.com/rels/color"
+            ],
+            "properties": {
+                "hexString": "#FF389B",
+                "description": ""
+            }
+        },
+        {
+            "class": [
+                "course-image"
+            ],
+            "rel": [
+                "https://api.brightspace.com/rels/organization-image"
+            ],
+            "href": "https://s.brightspace.com/course-images/images/ff64e0ad-3568-4daf-88ad-1e74e01a8617/tile-low-density-max-size.jpg"
+        },
+        {
+            "class": [
+                "relative-uri"
+            ],
+            "rel": [
+                "item",
+                "https://api.brightspace.com/rels/organization-homepage"
+            ],
+            "properties": {
+                "path": "/d2l/home/6609"
+            }
+        }
+    ],
 	"links": [
 		{
 			"rel": [

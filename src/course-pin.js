@@ -18,10 +18,10 @@ class CoursePin extends mixinBehaviors([
 					display: block;
 				}
 			</style>
-			<h2>CoursePin {{isPinned}}!</h2>
+			<h2>CoursePin [[isPinned]]!</h2>
 			<d2l-button-icon
 				hidden$="[[!isPinned]]"
-				text="{{pinnedText}}"
+				text="[[pinnedText]]"
 				icon="d2l-tier1:pin-filled">
 			</d2l-button-icon>
 		`;

@@ -25,24 +25,19 @@ class CourseCard extends mixinBehaviors([
 			<h2>Course Card</h2>
 			<div class="course-card-container">
 				<course-name href="[[href]]" token="[[token]]"></course-name>
-				<course-pin href="[[enrollmentHref]]" token="[[token]]"></course-pin>
+				<course-pin href="[[enrollment]]" token="[[token]]"></course-pin>
 			</div>
 		`;
 	}
 	static get properties() {
 		return {
-			enrollmentHref: {
-				type: String,
-				observer: '_hrefChanged',
+			enrollment: {
+				type: String
 			}
 		};
 	}
 
 	static get is() { return 'course-card'; }
-
-	_hrefChanged() {
-		console.log(this.enrollmentHref);
-	}
 }
 
 window.customElements.define(CourseCard.is, CourseCard);

@@ -19,8 +19,8 @@ class CoursesList extends mixinBehaviors([
 			<h2>List of Enrollments</h2>
 			<div class="courses-list">
 				<template is="dom-repeat" items="[[_enrollments]]">
-					<course-card href="[[item.orgunit]]" enrollmentHref="[[item.enrollment]]" token="[[token]]"></course-card>
-					
+					<course-card href="[[item.orgunit]]" enrollment="[[item.enrollment]]" token="[[token]]"></course-card>
+
 					<!--<course-name href="[[item.orgunit]]" token="[[token]]"></course-name>
 					<course-pin href="[[item.enrollment]]" token="[[token]]"></course-pin>-->
 				</template>

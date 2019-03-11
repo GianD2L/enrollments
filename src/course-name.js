@@ -16,7 +16,7 @@ class CourseName extends mixinBehaviors([
 					display: block;
 				}
 			</style>
-			<h2>CourseName {{name}}!</h2>
+			<h2>CourseName [[name]]!</h2>
 			<!--<h2>NextCourseHref is [[nextCourseHref]]</h2>
 			<div>Token is [[token]]</div>
 			<div>Href is [[href]]</div>-->

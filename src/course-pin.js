@@ -15,13 +15,13 @@ class CoursePin extends mixinBehaviors([
 		return html`
 			<style>
 				:host {
-					display: block;
+					display: inline-block;
 				}
 			</style>
-			<h2>CoursePin [[isPinned]]!</h2>
 			<d2l-button-icon
+				translucent=""
 				hidden$="[[!isPinned]]"
-				text="[[pinnedText]]"
+				text="Pinned Course"
 				icon="d2l-tier1:pin-filled">
 			</d2l-button-icon>
 		`;
@@ -31,10 +31,6 @@ class CoursePin extends mixinBehaviors([
 			isPinned: {
 				type: Boolean,
 				computed: '_getPinState(entity)'
-			},
-			pinnedText: {
-				type: String,
-				value: 'Pinned Course'
 			}
 		};
 	}

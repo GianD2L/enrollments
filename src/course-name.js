@@ -14,9 +14,11 @@ class CourseName extends mixinBehaviors([
 			<style>
 				:host {
 					display: block;
+					text-align: center;
 				}
 			</style>
-			<h2>CourseName [[name]]!</h2>
+			<div>[[name]]</div>
+			
 			<!--<h2>NextCourseHref is [[nextCourseHref]]</h2>
 			<div>Token is [[token]]</div>
 			<div>Href is [[href]]</div>-->

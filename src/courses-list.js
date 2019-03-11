@@ -15,14 +15,17 @@ class CoursesList extends mixinBehaviors([
 				:host {
 					display: block;
 				}
+
+				.courses-list {
+					display: flex;
+					flex-flow: row wrap
+					justify-content: space-evenly
+				}
 			</style>
 			<h2>List of Enrollments</h2>
 			<div class="courses-list">
 				<template is="dom-repeat" items="[[_enrollments]]">
-					<course-card href="[[item.orgunit]]" enrollment="[[item.enrollment]]" token="[[token]]"></course-card>
-
-					<!--<course-name href="[[item.orgunit]]" token="[[token]]"></course-name>
-					<course-pin href="[[item.enrollment]]" token="[[token]]"></course-pin>-->
+					<course-card href="[[item.orgunit]]" enrollment-href="[[item.enrollment]]" token="[[token]]"></course-card>
 				</template>
 			</div>
 		`;

@@ -1,0 +1,26 @@
+{
+    "class": [
+        "enrollments",
+        "root"
+    ],
+    "links": [{
+		"rel": [
+			"https://api.brightspace.com/rels/my-pinned-enrollments"
+		],
+		"href": "data/enrollments"
+	}, {
+		"rel": [
+			"https://api.brightspace.com/rels/default-search"
+		],
+		"href": "data/enrollments"
+	}],
+	"actions": [{
+		"name": "search-my-enrollments",
+		"href": "data/enrollments",
+		"method": "GET"
+	}, {
+		"name": "search-my-pinned-enrollments",
+		"href": "data/enrollments",
+		"method": "GET"
+	}]
+}

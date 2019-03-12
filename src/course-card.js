@@ -77,11 +77,10 @@ class CourseCard extends mixinBehaviors([
 	static get is() { return 'course-card'; }
 
 	_getImageHref(entity) {
-		if (entity && entity.hasSubEntityByClass('course-image')) {
-			var imageEntity = entity.getSubEntityByClass('course-image');
+		var imageEntity = entity && entity.getSubEntityByClass('course-image')
+		if (imageEntity) {
 			return imageEntity.href;
 		}
-
 		return null;
 	}
 }

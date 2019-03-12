@@ -11,7 +11,6 @@ import 'd2l-dropdown/d2l-dropdown-more.js';
 import 'd2l-dropdown/d2l-dropdown-content.js';
 import 'd2l-menu/d2l-menu-item.js';
 import 'd2l-menu/d2l-menu-item-link.js';
-import 'd2l-offscreen/d2l-offscreen.js';
 import 'd2l-button/d2l-button-icon.js';
 import 'd2l-icons/tier1-icons.js';
 
@@ -43,7 +42,7 @@ class CourseCard extends mixinBehaviors([
 			</style>
 
 			<d2l-card text="Course Card">
-				<course-image slot="header" href="[[href]]" token="[[token]]"></course-image>
+				<course-image slot="header" href="[[imageHref]]" token="[[token]]"></course-image>
 				
 				<d2l-dropdown-more slot="actions" translucent="" visible-on-ancestor="" text="Open!">
 						<d2l-dropdown-content>
@@ -66,7 +65,25 @@ class CourseCard extends mixinBehaviors([
 		`;
 	}
 
+	static get properties() {
+		return {
+			imageHref: {
+				type: String,
+				computed: '_getImageHref(entity)'
+			}
+		};
+	}
+	
 	static get is() { return 'course-card'; }
+
+	_getImageHref(entity) {
+		if (entity && entity.hasSubEntityByClass('course-image')) {
+			var imageEntity = entity.getSubEntityByClass('course-image');
+			return imageEntity.href;
+		}
+
+		return null;
+	}
 }
 
 window.customElements.define(CourseCard.is, CourseCard);

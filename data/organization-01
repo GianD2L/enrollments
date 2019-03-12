@@ -38,7 +38,7 @@
             "rel": [
                 "https://api.brightspace.com/rels/organization-image"
             ],
-            "href": "https://s.brightspace.com/course-images/images/db698103-20ec-42cd-b2d9-a6595b32002a/tile-low-density-max-size.jpg"
+            "href": "data/image-01"
         },
         {
             "class": [

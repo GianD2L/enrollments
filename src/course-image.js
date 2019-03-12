@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class.js';
 import 'd2l-polymer-siren-behaviors/store/entity-behavior.js';
-
+import 'd2l-course-image/d2l-course-image.js';
 /**
  * @customElement
  * @polymer
@@ -21,29 +21,46 @@ class CourseImage extends mixinBehaviors([
 					width: 100%;
 				}
 			</style>
-			
-			<img src="[[imageHref]]">
+
+			<div class="d2l-enrollment-card-image-container">
+				<d2l-course-image image="[[image]]" sizes="[[_tileSizes]]" type="tile">
+				</d2l-course-image>
+			</div>
 		`;
 	}
+
 	static get properties() {
 		return {
-			imageHref: {
-				type: String,
-				computed: '_getImageHref(entity)'
+			_tileSizes: {
+				type: Object,
+				value: function() {
+					return {
+						mobile: {
+							maxwidth: 767,
+							size: 100
+						},
+						tablet: {
+							maxwidth: 1243,
+							size: 67
+						},
+						desktop: {
+							size: 25
+						}
+					};
+				}
+			},
+
+			image: {
+				type: Object,
+				computed: '_getImage(entity)'
 			}
 		};
 	}
 
 	static get is() { return 'course-image'; }
 
-	_getImageHref(entity) {
-		if (entity && entity.hasSubEntityByClass('course-image')) {
-			var imageEntity = entity.getSubEntityByClass('course-image');
-			console.log(imageEntity.href);
-			return imageEntity.href;
-		}
-
-		return null;
+	_getImage(entity) {
+		return entity;
 	}
 }
 

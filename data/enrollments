@@ -12,15 +12,7 @@
 			"rel": [
 				"https://api.brightspace.com/rels/user-enrollment"
 			],
-			"links": [{
-				"rel": [ "self" ],
-				"href": "data/enrollment-00"
-			}, {
-				"rel": [
-					"https://api.brightspace.com/rels/organization"
-				],
-				"href": "data/organization-00"
-			}]
+			"href": "data/enrollment-00"
 		},
 		{
 			"class": [
@@ -30,15 +22,7 @@
 			"rel": [
 				"https://api.brightspace.com/rels/user-enrollment"
 			],
-			"links": [{
-				"rel": [ "self" ],
-				"href": "data/enrollment-01"
-			}, {
-				"rel": [
-					"https://api.brightspace.com/rels/organization"
-				],
-				"href": "data/organization-01"
-			}]
+			"href": "data/enrollment-01"
 		},
 		{
 			"class": [
@@ -48,15 +32,7 @@
 			"rel": [
 				"https://api.brightspace.com/rels/user-enrollment"
 			],
-			"links": [{
-				"rel": [ "self" ],
-				"href": "data/enrollment-02"
-			}, {
-				"rel": [
-					"https://api.brightspace.com/rels/organization"
-				],
-				"href": "data/organization-02"
-			}]
+			"href": "data/enrollment-02"
 		}
 	]
 }

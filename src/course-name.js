@@ -18,7 +18,7 @@ class CourseName extends mixinBehaviors([
 				}
 			</style>
 			<div>[[name]]</div>
-			
+
 			<!--<h2>NextCourseHref is [[nextCourseHref]]</h2>
 			<div>Token is [[token]]</div>
 			<div>Href is [[href]]</div>-->

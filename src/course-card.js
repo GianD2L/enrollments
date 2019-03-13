@@ -58,7 +58,12 @@ class CourseCard extends mixinBehaviors([
 						</d2l-menu>
 					</d2l-dropdown-menu>
 				</d2l-dropdown-more>
-				<course-pin slot="actions" href="[[enrollmentHref]]" token="[[token]]"></course-pin>
+				<d2l-button-icon slot="actions"
+					translucent=""
+					hidden$="[[!pinnned]]"
+					text="Pinned Course"
+					icon="d2l-tier1:pin-filled">
+				</d2l-button-icon>
 
 				<course-name slot="content" href="[[href]]" token="[[token]]"></course-name>
 			</d2l-card>
@@ -83,6 +88,8 @@ class CourseCard extends mixinBehaviors([
 		}
 		return null;
 	}
+
+
 }
 
 window.customElements.define(CourseCard.is, CourseCard);

@@ -29,10 +29,6 @@ class CourseName extends mixinBehaviors([
 			name: {
 				type: String,
 				computed: '_getName(entity)'
-			},
-			nextCourseHref: {
-				type: String,
-				computed: '_getNextCourseHref(entity)'
 			}
 		};
 	}
@@ -41,12 +37,6 @@ class CourseName extends mixinBehaviors([
 
 	_getName(entity) {
 		return entity && entity.properties && entity.properties.name || '';
-	}
-
-	_getNextCourseHref(entity) {
-		return entity
-			&& entity.hasLinkByRel('https://api.brightspace.com/rels/next-course')
-			&& entity.getLinkByRel('https://api.brightspace.com/rels/next-course').href;
 	}
 }
 

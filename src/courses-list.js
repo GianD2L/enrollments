@@ -34,15 +34,15 @@ class CoursesList extends mixinBehaviors([
 	}
 	static get properties() {
 		return {
-			_entity: {
-				type: String,
-				observer: '_entityChanged',
-				computed: '_getEntity(entity)'
-			},
 			_enrollments: Array
 		};
 	}
 
+	static get observers() {
+		return [
+			'_entityChanged(entity)'
+		];
+	}
 	static get is() { return 'courses-list'; }
 
 	connectedCallback() {
@@ -52,25 +52,24 @@ class CoursesList extends mixinBehaviors([
 		super.disconnectedCallback();
 	}
 
-	_getEntity(entity) {
-		return entity;
-	}
-
-	_entityChanged(newValue, oldValue) {
-		var entity = newValue;
+	_entityChanged(entity) {
 		var enrollmentsSearchAction = entity && entity.getActionByName('search-my-enrollments');
-		if (enrollmentsSearchAction) {
-			this.performSirenAction(enrollmentsSearchAction).then(function(enrollments) {
-				var enrollmentsHrefs = [];
-				var enrollmentEntities = enrollments && enrollments.getSubEntitiesByClass('enrollment');
-				if (enrollmentEntities) {
-					enrollmentEntities.forEach(function(enrollment) {
-						enrollmentsHrefs.push(enrollment.href);
-					}, this);
-				}
-				this._enrollments = enrollmentsHrefs;
-			}.bind(this));
+		if (!enrollmentsSearchAction) {
+			return;
 		}
+
+		this.performSirenAction(enrollmentsSearchAction).then(function(enrollments) {
+			var enrollmentEntities = enrollments && enrollments.getSubEntitiesByClass('enrollment');
+			if (!enrollmentEntities) {
+				return;
+			}
+			
+			var enrollmentsHrefs = [];
+			enrollmentEntities.forEach(function(enrollment) {
+				enrollmentsHrefs.push(enrollment.href);
+			}, this);
+			this._enrollments = enrollmentsHrefs;
+		}.bind(this));
 	}
 }
 

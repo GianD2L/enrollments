@@ -11,5 +11,22 @@
 			"https://api.brightspace.com/rels/organization"
 		],
 		"href": "data/organization-00"
-	}]
+	}],
+	"actions": [
+        {
+            "href": "data/organization-00",
+            "name": "unpin-course",
+            "method": "PUT",
+            "fields": [
+                {
+                    "type": "hidden",
+                    "name": "pinned",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "rel": [
+        "https://api.brightspace.com/rels/user-enrollment"
+    ]
 }

@@ -23,7 +23,7 @@ class CourseImage extends mixinBehaviors([
 			</style>
 
 			<div class="d2l-enrollment-card-image-container">
-				<d2l-course-image image="[[image]]" sizes="[[_tileSizes]]" type="tile">
+				<d2l-course-image image="[[entity]]" sizes="[[_tileSizes]]" type="tile">
 				</d2l-course-image>
 			</div>
 		`;
@@ -50,18 +50,11 @@ class CourseImage extends mixinBehaviors([
 				}
 			},
 
-			image: {
-				type: Object,
-				computed: '_getImage(entity)'
-			}
 		};
 	}
 
 	static get is() { return 'course-image'; }
 
-	_getImage(entity) {
-		return entity;
-	}
 }
 
 window.customElements.define(CourseImage.is, CourseImage);

@@ -24,7 +24,7 @@
 	}],
     "actions": [
         {
-            "href": "do-not-exist",
+            "href": "data/organization-02",
             "name": "unpin-course",
             "method": "PUT",
             "fields": [

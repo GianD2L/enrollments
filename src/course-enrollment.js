@@ -17,7 +17,7 @@ class CourseEnrollment extends mixinBehaviors([
 					text-align: center;
 				}
 			</style>
-			<course-card href="[[orgHref]]" token="[[token]]" pinnned="[[isPinned]]"></course-card>
+			<course-card href="[[orgHref]]" token="[[token]]" pinned="[[isPinned]]" pin-action="[[pinAction]]"></course-card>
 		`;
 	}
 
@@ -30,6 +30,10 @@ class CourseEnrollment extends mixinBehaviors([
 			isPinned: {
 				type: Boolean,
 				computed: '_getPinState(entity)'
+			},
+			pinAction: {
+				type: Object,
+				computed: '_getPinAction(entity)'
 			}
 		};
 	}
@@ -38,14 +42,15 @@ class CourseEnrollment extends mixinBehaviors([
 
 	_getOrgHref(entity) {
 		var org = entity && entity.getLinkByRel('https://api.brightspace.com/rels/organization');
-		if (org) {
-			return org.href;
-		}
-		return null;
+		return org && org.href;
 	}
 
 	_getPinState(entity) {
 		return entity && entity.hasClass('pinned');
+	}
+
+	_getPinAction(entity) {
+		return entity && (this.isPinned ? entity.getActionByName('unpin-course') : entity.getActionByName('pin-course'));
 	}
 }
 
